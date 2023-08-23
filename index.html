@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Color_Changer</title>
+    <style>
+        body {
+            background-color: aliceblue;
+            color: red;
+        }
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+        .mainContainer {
+            display: flex;
+            justify-content: center;
+        }
+        .firstBox {
+            background-color: grey;
+        }
+        .secondBox {
+            background-color: bisque;
+        }
+        .thirdBox {
+            background-color: blue;
+        }
+        .fourthBox {
+            background-color: yellow;
+        }
+        .buttons {
+            border: 2px;
+            border-color: black;
+            border-style: solid;
+            margin: 3px;
+    
+        }
+        .dimensions {
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3 {
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Color Scheme Switcher</h2>
+    <div class="mainContainer">
+        <div class="firstBox buttons dimensions">grey </div>
+        <div class="secondBox buttons dimensions">bisque </div>
+        <div class="thirdBox buttons dimensions">blue </div>
+        <div class="fourthBox buttons dimensions">yellow </div>
+    </div>
+    <h3>Try clicking on one of the colors above to change the background color of this page!</h3>
+</body>
+
+<script>
+    for(let i=0; i<4; i++) {
+        document.querySelectorAll(".buttons")[i].addEventListener("click", function (eventTriggered) {
+            console.log(eventTriggered);
+            console.log(eventTriggered.target);
+            document.body.style.backgroundColor = eventTriggered.target.innerHTML;
+        });
+    }        
+
+    <!-- function changeBackgroundColor(this.innerHTML) -->
+</script>
+
+</html>
